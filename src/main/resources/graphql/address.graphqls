@@ -1,0 +1,22 @@
+type ViaCepResponse {
+    cep: String
+    logradouro: String
+    complemento: String
+    bairro: String
+    localidade: String
+    uf: String
+    ibge: String
+    gia: String
+    ddd: String
+    siafi: String
+}
+
+type AddressResponse {
+    statusCode: Int
+    statusMessage: String
+    viaCepResponse: ViaCepResponse
+}
+
+type Query {
+    getAddressByZipcode(cep: String!): AddressResponse
+}
